@@ -4,31 +4,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title>Document</title>
 </head>
 <body>
-  <h1>URL Shortener</h1>
-  <form action="" method="POST">
-    <label for="fullURL">URL</label>
-    <input type="url" name="fullURL" placeholder="Shorten your link" id="fullURL">
-    <button type="submit">Shorten</button>
-  </form>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Full URL</th>
-        <th>Short URL</th>
-        <th>Clicks</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="https://github.com/eynlanzer" target="_blank" >https://github.com/eynlanzer</a></td>
-        <td><a href="/shortURL" target="_blank" >/shortURL</a></td>
-        <td>31</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="container">
+    <h1>URL Shortener</h1>
+    <form action="" method="POST" class="my-4 form-inline">
+      <label for="fullURL" class="sr-only">URL</label>
+      <input required type="url" name="fullURL" placeholder="Shorten your link" id="fullURL" class="form-control col mr-2">
+      <button class="btn btn-success" type="submit">Shorten</button>
+    </form>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Full URL</th>
+          <th>Short URL</th>
+          <th>Clicks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/eynlanzer" target="_blank" >https://github.com/eynlanzer</a></td>
+          <td><a href="/shortURL" target="_blank" >/shortURL</a></td>
+          <td>31</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
