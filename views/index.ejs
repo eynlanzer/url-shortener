@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <title>Document</title>
+  <title>URL Shortener</title>
 </head>
 <body>
   <div class="container">
@@ -25,11 +25,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><a href="https://github.com/eynlanzer" target="_blank" >https://github.com/eynlanzer</a></td>
-          <td><a href="/shortURL" target="_blank" >/shortURL</a></td>
-          <td>31</td>
-        </tr>
+        <% shortURLs.forEach(shortURL => { %>
+          <tr>
+            <td><a href="<%= shortURL.full %>"><%= shortURL.full %></a></td>
+            <td><a href="<%= shortURL.short %>"><%= shortURL.short %></a></td>
+            <td><%= shortURL.clicks %></td>
+          </tr>
+        <% }) %>
       </tbody>
     </table>
   </div>
