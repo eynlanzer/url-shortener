@@ -24,6 +24,16 @@ app.post('/shortURLs', async (req, res) => {
   res.redirect('/')
 })
 
+app.get('/:shortURL', async (req, res) => {
+  const shortURL = await ShortURL.findOne({ short: req.params.shortURL })
+  if (shortURL == null) return res.sendStatus(404)
+
+  shortURL.clicks++
+  shortURL.save() // update clicks value
+
+  res.redirect(shortURL.full)
+})
+
 app.listen(port, () => {
   const date = new Date()
   console.log(`${date} - Server is running on port: ${port}`)
